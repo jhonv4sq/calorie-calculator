@@ -1,5 +1,5 @@
-import {React} from "react";
-import {Form, Input} from "../components/*";
+import Form from '../components/Form'
+import Input from '../components/Input'
 
 const Home = () => {
     return (
