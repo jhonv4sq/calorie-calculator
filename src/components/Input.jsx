@@ -7,7 +7,7 @@ const Input = ({ name = '', label = '', onChange = () => {}, ...props }) => {
                 name={name}
                 {...props}
             />
-            <label className="text-white pointer-events-none absolute left-0 top-[-0.5rem] flex h-full w-full select-none text-[12px] font-normal leading-tight text-blue-gray-400 before:block before:h-1.5 before:w-2.5">
+            <label className="text-white pointer-events-none absolute left-0 top-[-1rem] flex h-full w-full select-none text-[12px] font-normal leading-tight text-blue-gray-400 before:block before:h-1.5 before:w-2.5">
                 {label}
             </label>
         </div>

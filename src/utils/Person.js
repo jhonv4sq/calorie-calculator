@@ -12,16 +12,16 @@ class Person {
     }
 
     static GENDER = {
-        male: 'Male',
-        female: 'female'
+        male: 'home.male',
+        female: 'home.female'
     }
 
     static LIFE_STYLES = {
-        sedentary: 'sedentary',
-        lightActivity: 'Light Activity',
-        moderateActivity: 'Moderate Activity',
-        highActivity: 'High Activity',
-        veryHighActivity: 'Very High Activity'
+        sedentary: 'home.sedentary',
+        lightActivity: 'home.light-activity',
+        moderateActivity: 'home.moderate-activity',
+        highActivity: 'home.high-activity',
+        veryHighActivity: 'home.very-high-activity'
     }
 
     constructor(lifeStyles, gender, height) {

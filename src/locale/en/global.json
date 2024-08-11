@@ -1,0 +1,17 @@
+{
+    "home": {
+        "male": "Male",
+        "female": "Female",
+        "sedentary": "Sedentary",
+        "light-activity": "Light activity",
+        "moderate-activity": "Moderate activity",
+        "high-activity": "High activity",
+        "very-high-activity": "Very high activity",
+        "age": "Age",
+        "gender": "Gender",
+        "weight": "Current weight",
+        "height": "Height",
+        "lifestyles": "Physical activity level",
+        "select": "Select..."
+    }
+}
