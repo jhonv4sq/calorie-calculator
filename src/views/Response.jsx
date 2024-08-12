@@ -11,14 +11,16 @@ const Response = () => {
     return (
         <>
             <Card>
-                <div className='text-justify'>
-                    <p className='mb-3'>
-                        {t('response.ideal-weight', {idealWeight: idealWeight})}
-                    </p>
-                    <p className='whitespace-pre-wrap'>
-                        {t('response.dcn', {dcn: dcn})}
-                    </p>
-                </div>
+                <Card.Body>
+                    <div className='text-justify'>
+                        <p className='mb-3'>
+                            {t('response.ideal-weight', {idealWeight: idealWeight})}
+                        </p>
+                        <p className='whitespace-pre-wrap'>
+                            {t('response.dcn', {dcn: dcn})}
+                        </p>
+                    </div>
+                </Card.Body>
             </Card>
         </>
     )
