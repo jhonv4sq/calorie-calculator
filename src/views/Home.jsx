@@ -8,7 +8,7 @@ import Select from '../components/Select'
 import Button from '../components/Button'
 
 import Person from '../utils/Person'
-import calculateCalorieNeeds from '../utils/calculate'
+import calculate from '../utils/calculate'
 
 const Home = () => {
     const [t] = useTranslation('global')
@@ -16,8 +16,10 @@ const Home = () => {
 
     const onSubmit = (data) => {
         let person = new Person(data)
-        let request = calculateCalorieNeeds(person)
-        console.log(request)
+        let idealWeight = calculate.idealWeight(person)
+        let dcn = calculate.calorieNeeds(person, idealWeight)
+
+        console.log('peso ideal es: '+ idealWeight+'kg', 'cantidad de calorias a consumir: '+ dcn+'kcal/día')
     }
 
     return (

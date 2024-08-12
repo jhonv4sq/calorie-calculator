@@ -4,7 +4,7 @@ const Select = ({name = '', label = '', values = {}, getTranslation = () => {}, 
             <label className="text-white text-[12px] font-normal leading-tight text-blue-gray-400 ml-2 tracking-wider">
                 {label}
             </label>
-            <select 
+            <select
             className="rounded-[7px] border-none bg-[#94a3b8] bg-opacity-50 px-8 py-2 text-center text-sm font-normal outline-none backdrop-blur-md text-slate-200"
             {...register(name, {
                 required: true

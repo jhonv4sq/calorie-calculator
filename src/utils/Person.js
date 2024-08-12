@@ -25,17 +25,17 @@ class Person {
     }
 
     constructor(data) {
-        this.age = data.age
+        this.age = Number(data.age)
         this.gender = data.gender
-        this.height = data.height
-        this.weight = data.weight
+        this.height = Number(data.height)
+        this.weight = Number(data.weight)
         this.lifeStyles = data.lifeStyles
     }
 
     heightInInches() {
-        return Math.round(this.height * 39.37) 
+        return Math.round(this.height * 39.37)
     }
-    
+
     getData() {
         let [data1, data2, data3, data4, data5] = Person.DATA[this.gender]
         let lifeStyles = Person.DATA['lifeStyles'][this.lifeStyles]
@@ -51,4 +51,4 @@ class Person {
     }
 }
 
-export default Person;
+export default Person

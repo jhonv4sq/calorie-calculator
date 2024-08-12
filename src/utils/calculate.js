@@ -1,13 +1,16 @@
-import Person from './Person'
+const idealWeight = (person) => {
+    let info = person.getData()
 
-const calculateCalorieNeeds = (person) => {
+    // Devine Formula
+    let idealWeight = info.data5 + 2.3 * (info.height - 60)
+    return Math.round(idealWeight)
+}
+
+const calorieNeeds = (person, idealWeight) => {
     let height = person.height
     let weight = person.weight
     let age = person.age
     let info = person.getData()
-    
-    // Devine Formula
-    let idealWeight = info.data5 + 2.3 * (info.height - 60)
 
     let dephysis = false
     if (Math.round(weight) > Math.round(idealWeight)) {
@@ -15,7 +18,7 @@ const calculateCalorieNeeds = (person) => {
     }
 
     height =  height * 100
-    
+
     // Basal Metabolic Rate Harris-Benedict Formula
     let mul1 = info.data2 * idealWeight
 
@@ -25,7 +28,7 @@ const calculateCalorieNeeds = (person) => {
 
     let mul2 = info.data3 * height
     let mul3 = info.data4 * age
-    let bmr = info.data1 + mul1 + mul2 - mul3    
+    let bmr = info.data1 + mul1 + mul2 - mul3
 
     // Daily Calorie Needs
     let dcn = Math.round(bmr * info.lifeStyles)
@@ -33,11 +36,11 @@ const calculateCalorieNeeds = (person) => {
     if (dephysis) {
         dcn = dcn - 500
     }
-    
-    return {
-        idealWeight: idealWeight,
-        dcn: dcn
-    }
+
+    return dcn
 }
 
-export default calculateCalorieNeeds;
+export default {
+    idealWeight,
+    calorieNeeds
+}
