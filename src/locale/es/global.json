@@ -17,5 +17,9 @@
     },
     "error": {
 
+    },
+    "response": {
+        "ideal-weight": "Tu peso ideal es de {{idealWeight}}kg.",
+        "dcn": "Debes consumir {{dcn}}kcal al día\npara alcanzar tu peso ideal."
     }
 }

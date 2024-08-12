@@ -5,5 +5,4 @@ const Form = ({ children, handleSubmit = () => {} }) => {
         </form>
     )
 }
-
 export default Form

@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { useForm } from 'react-hook-form'
+import { useNavigate } from 'react-router-dom'
 
 import Card from '../components/Card'
 import Form from '../components/Form'
@@ -13,13 +14,15 @@ import calculate from '../utils/calculate'
 const Home = () => {
     const [t] = useTranslation('global')
     const { register, handleSubmit } = useForm()
+    const navigate = useNavigate()
 
     const onSubmit = (data) => {
         let person = new Person(data)
+
         let idealWeight = calculate.idealWeight(person)
         let dcn = calculate.calorieNeeds(person, idealWeight)
 
-        console.log('peso ideal es: '+ idealWeight+'kg', 'cantidad de calorias a consumir: '+ dcn+'kcal/día')
+        navigate('/calorie-calculator/response', { state: { idealWeight, dcn } })
     }
 
     return (
