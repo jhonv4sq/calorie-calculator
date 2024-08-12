@@ -28,14 +28,21 @@ const Home = () => {
     return (
         <>
             <Card>
-                <Form handleSubmit={ handleSubmit(onSubmit) } >
-                    <Input name='age' label={t('home.age')} register={register} type='number' />
-                    <Select name='gender' label={t('home.gender')} values={Person.GENDER} getTranslation={t} register={register} />
-                    <Input name='weight' label={t('home.weight')} register={register} type='number' />
-                    <Input name='height' label={t('home.height')} register={register} type='number' step='0.01' />
-                    <Select name='lifeStyles' label={t('home.lifestyles')} values={Person.LIFE_STYLES} getTranslation={t} register={register} />
-                    <Button text={t('home.submit')} type='submit' />
-                </Form>
+                <Card.Header>
+                    <h3 className='text-base font-bold text-center uppercase w-60 max-sm:w-full'>
+                        {t('home.header')}
+                    </h3>
+                </Card.Header>
+                <Card.Body>
+                    <Form handleSubmit={ handleSubmit(onSubmit) } >
+                        <Input name='age' label={t('home.age')} register={register} type='number' />
+                        <Select name='gender' label={t('home.gender')} values={Person.GENDER} getTranslation={t} register={register} />
+                        <Input name='weight' label={t('home.weight')} register={register} type='number' />
+                        <Input name='height' label={t('home.height')} register={register} type='number' step='0.01' />
+                        <Select name='lifeStyles' label={t('home.lifestyles')} values={Person.LIFE_STYLES} getTranslation={t} register={register} />
+                        <Button text={t('home.submit')} type='submit' />
+                    </Form>
+                </Card.Body>
             </Card>
         </>
     )

@@ -1,7 +1,7 @@
 const Input = ({ name = '', label = '', register = () => {}, ...props }) => {
     return(
         <div className="text-lg flex flex-col text-left">
-            <label className="text-white text-[12px] font-normal leading-tight text-blue-gray-400 ml-2 tracking-wider">
+            <label className="text-white text-[12px] font-normal leading-tight ml-2 tracking-wider">
                 {label}
             </label>
             <input

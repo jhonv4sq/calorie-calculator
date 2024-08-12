@@ -13,7 +13,8 @@
         "height": "Altura",
         "lifestyles": "Nivel de actividad física",
         "select": "Seleccionar...",
-        "submit": "Enviar"
+        "submit": "Enviar",
+        "header": "Calcula tu consumo de calorías diarias"
     },
     "error": {
 

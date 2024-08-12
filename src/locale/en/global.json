@@ -13,7 +13,8 @@
         "height": "Height",
         "lifestyles": "Physical activity level",
         "select": "Select...",
-        "submit": "Submit"
+        "submit": "Submit",
+        "header": "Calculate your daily calorie intake"
     },
     "error": {
 
