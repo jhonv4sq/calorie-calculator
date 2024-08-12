@@ -12,6 +12,10 @@
         "weight": "Current weight",
         "height": "Height",
         "lifestyles": "Physical activity level",
-        "select": "Select..."
+        "select": "Select...",
+        "submit": "Submit"
+    },
+    "error": {
+        
     }
 }

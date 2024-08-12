@@ -1,6 +1,6 @@
-const Form = ({ children }) => {
+const Form = ({ children, handleSubmit = () => {} }) => {
     return (
-        <form className="grid gap-6">
+        <form onSubmit={handleSubmit} className="grid gap-3">
             {children}
         </form>
     )

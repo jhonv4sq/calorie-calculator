@@ -12,6 +12,10 @@
         "weight": "Peso actual",
         "height": "Altura",
         "lifestyles": "Nivel de actividad física",
-        "select": "Seleccionar..."
+        "select": "Seleccionar...",
+        "submit": "Enviar"
+    },
+    "error": {
+        
     }
 }

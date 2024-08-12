@@ -1,7 +1,9 @@
 import Person from './Person'
 
-const calculateCalorieNeeds = (lifestyles, gender, height, weight, age) => {
-    let person = new Person(lifestyles, gender, height)
+const calculateCalorieNeeds = (person) => {
+    let height = person.height
+    let weight = person.weight
+    let age = person.age
     let info = person.getData()
     
     // Devine Formula

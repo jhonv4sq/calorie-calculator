@@ -24,10 +24,12 @@ class Person {
         veryHighActivity: 'home.very-high-activity'
     }
 
-    constructor(lifeStyles, gender, height) {
-        this.lifeStyles = lifeStyles
-        this.gender = gender
-        this.height = height
+    constructor(data) {
+        this.age = data.age
+        this.gender = data.gender
+        this.height = data.height
+        this.weight = data.weight
+        this.lifeStyles = data.lifeStyles
     }
 
     heightInInches() {
