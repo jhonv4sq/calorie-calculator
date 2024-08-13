@@ -1,6 +1,6 @@
 const Button = ({ text = '' }) => {
     return (
-        <button className="">
+        <button className="outline-none">
             {text}
         </button>
     )

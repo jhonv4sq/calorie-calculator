@@ -10,11 +10,14 @@ import Button from '../components/Button'
 
 import Person from '../utils/Person'
 import calculate from '../utils/calculate'
+import homeRules from '../config/formValidation/rules';
 
 const Home = () => {
     const [t] = useTranslation('global')
-    const { register, handleSubmit } = useForm()
+    const { register, formState: { errors }, handleSubmit } = useForm()
     const navigate = useNavigate()
+
+    const formEvents = {t, register, errors, homeRules}
 
     const onSubmit = (data) => {
         let person = new Person(data)
@@ -24,6 +27,7 @@ const Home = () => {
 
         navigate('/calorie-calculator/response', { state: { idealWeight, dcn } })
     }
+    console.log(errors)
 
     return (
         <>
@@ -35,11 +39,11 @@ const Home = () => {
                 </Card.Header>
                 <Card.Body>
                     <Form handleSubmit={ handleSubmit(onSubmit) } >
-                        <Input name='age' label={t('home.age')} register={register} type='number' />
-                        <Select name='gender' label={t('home.gender')} values={Person.GENDER} getTranslation={t} register={register} />
-                        <Input name='weight' label={t('home.weight')} register={register} type='number' />
-                        <Input name='height' label={t('home.height')} register={register} type='number' step='0.01' />
-                        <Select name='lifeStyles' label={t('home.lifestyles')} values={Person.LIFE_STYLES} getTranslation={t} register={register} />
+                        <Input name='age' label={t('home.age')} formEvents={formEvents} type='number' />
+                        <Select name='gender' label={t('home.gender')} values={Person.GENDER} formEvents={formEvents} />
+                        <Input name='weight' label={t('home.weight')} formEvents={formEvents} type='number' />
+                        <Input name='height' label={t('home.height')} formEvents={formEvents} type='number' step='0.01' />
+                        <Select name='lifeStyles' label={t('home.lifestyles')} values={Person.LIFE_STYLES} formEvents={formEvents} />
                         <Button text={t('home.submit')} type='submit' />
                     </Form>
                 </Card.Body>

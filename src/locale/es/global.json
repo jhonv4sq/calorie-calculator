@@ -9,15 +9,17 @@
         "very-high-activity": "Muy alta actividad",
         "age": "Edad",
         "gender": "Género",
-        "weight": "Peso actual",
-        "height": "Altura",
+        "weight": "Peso actual (kg)",
+        "height": "Altura (cm)",
         "lifestyles": "Nivel de actividad física",
         "select": "Seleccionar...",
         "submit": "Enviar",
-        "header": "Calcula tu consumo de calorías diarias"
-    },
-    "error": {
-
+        "header": "Calcula tu consumo de calorías diarias",
+        "error": {
+            "required": "Tu {{label}} es requerido.",
+            "pattern": "{{label}} no tiene el formato correcto.",
+            "validate": "{{label}} debe ser mayor de 0."
+        }
     },
     "response": {
         "ideal-weight": "Tu peso ideal es de {{idealWeight}}kg.",

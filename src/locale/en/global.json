@@ -9,12 +9,17 @@
         "very-high-activity": "Very high activity",
         "age": "Age",
         "gender": "Gender",
-        "weight": "Current weight",
-        "height": "Height",
+        "weight": "Current weight (kg)",
+        "height": "Height (cm)",
         "lifestyles": "Physical activity level",
         "select": "Select...",
         "submit": "Submit",
-        "header": "Calculate your daily calorie intake"
+        "header": "Calculate your daily calorie intake",
+        "error": {
+            "required": "Your {{label}} is required.",
+            "pattern": "{{label}} is not in the correct format.",
+            "validate": "{{label}} must be greater than 0."
+        }
     },
     "error": {
 
