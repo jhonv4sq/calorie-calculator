@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
+import Swal from 'sweetalert2'
 
 import Card from '../components/Card'
 import Form from '../components/Form'
@@ -19,15 +20,39 @@ const Home = () => {
 
     const formEvents = {t, register, errors, homeRules}
 
-    const onSubmit = (data) => {
+    const getErrorMessages = (errorsJson) => {
+        return Object.entries(errorsJson).reduce((newArray, [key, value]) => {
+            let field = t('home.' + key)
+            newArray.push('<p>'+ t('home.error.'+ value.type, {field: field}) +'</p>')
+            return newArray
+        }, [])
+    }
+
+    const onValid = (data) => {
+        console.log('entra')
         let person = new Person(data)
 
         let idealWeight = calculate.idealWeight(person)
         let dcn = calculate.calorieNeeds(person, idealWeight)
 
-        navigate('/calorie-calculator/response', { state: { idealWeight, dcn } })
+        Swal.fire({
+            text: t('home.alert.success'),
+            icon: 'success'
+        }).then(() => {
+            navigate('/calorie-calculator/response', { state: { idealWeight, dcn } })
+        })
     }
-    console.log(errors)
+
+    const onInvalid = (errors) => {
+        let errorMessages = getErrorMessages(errors).join('')
+
+        Swal.fire({
+            html: errorMessages,
+            icon: "warning",
+            showCloseButton: true,
+          })
+    }
+
 
     return (
         <>
@@ -38,12 +63,12 @@ const Home = () => {
                     </h3>
                 </Card.Header>
                 <Card.Body>
-                    <Form handleSubmit={ handleSubmit(onSubmit) } >
-                        <Input name='age' label={t('home.age')} formEvents={formEvents} type='number' />
+                    <Form handleSubmit={ handleSubmit(onValid, onInvalid) } >
+                        <Input name='age' label={t('home.age')} formEvents={formEvents} type='number' min='0' />
                         <Select name='gender' label={t('home.gender')} values={Person.GENDER} formEvents={formEvents} />
-                        <Input name='weight' label={t('home.weight')} formEvents={formEvents} type='number' />
-                        <Input name='height' label={t('home.height')} formEvents={formEvents} type='number' step='0.01' />
-                        <Select name='lifeStyles' label={t('home.lifestyles')} values={Person.LIFE_STYLES} formEvents={formEvents} />
+                        <Input name='weight' label={t('home.weight')} formEvents={formEvents} type='number' min='0' />
+                        <Input name='height' label={t('home.height')} formEvents={formEvents} type='number' step='0.01' min='0' />
+                        <Select name='lifeStyles' label={t('home.lifeStyles')} values={Person.LIFE_STYLES} formEvents={formEvents} />
                         <Button text={t('home.submit')} type='submit' />
                     </Form>
                 </Card.Body>
