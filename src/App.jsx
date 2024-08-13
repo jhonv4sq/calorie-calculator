@@ -15,7 +15,7 @@ function App() {
                 <header className='w-full flex justify-center bg-[#111517] border-b border-blue-400'>
                     <nav className='w-full px-[15px] py-3 mx-auto sm:max-w-[540px] md:max-w-[600px] lg:max-w-[1066px] flex justify-between'>
                         <div className='h-full flex items-center'>
-                            <Link to='/calorie-calculator' className='text-white text-lg uppercase'>
+                            <Link to='/calorie-calculator' className='text-white text-base sm:text-lg'>
                                 {t('navbar.home')}
                             </Link>
                         </div>
