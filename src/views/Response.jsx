@@ -1,10 +1,7 @@
-import { useTranslation } from 'react-i18next'
 import { useLocation } from 'react-router-dom'
 import Card from '../components/Card'
 
-const Response = () => {
-    const [t] = useTranslation('global')
-
+const Response = ({t}) => {
     const location = useLocation();
     const { idealWeight, dcn } = location.state || {}
 

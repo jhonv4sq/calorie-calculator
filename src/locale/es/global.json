@@ -1,4 +1,7 @@
 {
+    "navbar": {
+        "home": "Inicio"
+    },
     "home": {
         "male": "Hombre",
         "female": "Mujer",

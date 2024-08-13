@@ -1,4 +1,3 @@
-import { useTranslation } from 'react-i18next'
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2'
@@ -13,8 +12,7 @@ import Person from '../utils/Person'
 import calculate from '../utils/calculate'
 import homeRules from '../config/formValidation/rules';
 
-const Home = () => {
-    const [t] = useTranslation('global')
+const Home = ({t}) => {
     const { register, formState: { errors }, handleSubmit } = useForm()
     const navigate = useNavigate()
 
@@ -55,25 +53,23 @@ const Home = () => {
 
 
     return (
-        <>
-            <Card>
-                <Card.Header>
-                    <h3 className='text-base font-bold text-center uppercase w-60 max-sm:w-full'>
-                        {t('home.header')}
-                    </h3>
-                </Card.Header>
-                <Card.Body>
-                    <Form handleSubmit={ handleSubmit(onValid, onInvalid) } >
-                        <Input name='age' label={t('home.age')} formEvents={formEvents} type='number' min='0' />
-                        <Select name='gender' label={t('home.gender')} values={Person.GENDER} formEvents={formEvents} />
-                        <Input name='weight' label={t('home.weight')} formEvents={formEvents} type='number' min='0' />
-                        <Input name='height' label={t('home.height')} formEvents={formEvents} type='number' step='0.01' min='0' />
-                        <Select name='lifeStyles' label={t('home.lifeStyles')} values={Person.LIFE_STYLES} formEvents={formEvents} />
-                        <Button text={t('home.submit')} type='submit' />
-                    </Form>
-                </Card.Body>
-            </Card>
-        </>
+        <Card>
+            <Card.Header>
+                <h3 className='text-base font-bold text-center uppercase w-full sm:w-60'>
+                    {t('home.header')}
+                </h3>
+            </Card.Header>
+            <Card.Body>
+                <Form handleSubmit={ handleSubmit(onValid, onInvalid) } >
+                    <Input name='age' label={t('home.age')} formEvents={formEvents} type='number' min='0' />
+                    <Select name='gender' label={t('home.gender')} values={Person.GENDER} formEvents={formEvents} />
+                    <Input name='weight' label={t('home.weight')} formEvents={formEvents} type='number' min='0' />
+                    <Input name='height' label={t('home.height')} formEvents={formEvents} type='number' step='0.01' min='0' />
+                    <Select name='lifeStyles' label={t('home.lifeStyles')} values={Person.LIFE_STYLES} formEvents={formEvents} />
+                    <Button text={t('home.submit')} type='submit' />
+                </Form>
+            </Card.Body>
+        </Card>
     )
 }
 

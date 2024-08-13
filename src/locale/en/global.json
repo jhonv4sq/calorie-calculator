@@ -1,4 +1,7 @@
 {
+    "navbar": {
+        "home": "Home"
+    },
     "home": {
         "male": "Male",
         "female": "Female",
@@ -23,9 +26,6 @@
             "pattern": "{{field}} is not in the correct format.",
             "validate": "{{field}} must be greater than 0."
         }
-    },
-    "error": {
-
     },
     "response": {
         "ideal-weight": "Your ideal weight is {{idealWeight}}kg.",
