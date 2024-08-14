@@ -55,9 +55,9 @@ const Home = ({t}) => {
     return (
         <Card>
             <Card.Header>
-                <h3 className='text-base font-bold text-center uppercase w-full sm:w-60'>
+                <h1 className='text-base font-bold text-center uppercase w-full sm:w-60'>
                     {t('home.header')}
-                </h3>
+                </h1>
             </Card.Header>
             <Card.Body>
                 <Form handleSubmit={ handleSubmit(onValid, onInvalid) } >
