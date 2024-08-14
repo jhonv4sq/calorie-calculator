@@ -1,6 +1,6 @@
 # Calorie Calculator
 
-## Descripción
+## Description
 
 This project is a landing page developed with **Vite** and **React** that allows users to calculate their ideal weight using the Devine formula and their daily caloric intake needed to reach that ideal weight using the Harris-Benedict formula. Users enter their data such as age, weight, height, gender, and level of physical activity, and the system provides personalized calculations based on that information.
 
@@ -14,11 +14,11 @@ This project is a landing page developed with **Vite** and **React** that allows
 - **Female:** TMB = 447.593 + (9.247 × Weight in kg) + (3.098 × Height in cm) − (4.330 × Age)
 - **Male:** TMB = 88.362 + (13.397 × Weight in kg) + (4.799 × Height in cm) − (5.677 × Age)
 - **Exercise Level:**
--- Sedentary: 1.2,
--- Light Activity: 1.375,
--- Moderate Activity: 1.55,
--- High Activity: 1.725,
--- Very High Activity: 1.9
+	- Sedentary: 1.2
+	- Light Activity: 1.375
+	- Moderate Activity: 1.55
+	- High Activity: 1.725
+	- Very High Activity: 1.9
 
     TMB x Exercise Level = result kcal/day
 
